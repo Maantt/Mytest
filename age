@@ -1,0 +1,25 @@
+#!/bin/bash
+echo "Enter the size of an array"
+read size
+if [ $size -lt 0 ]
+then
+echo "Invalid input"
+fi
+read -a age
+length=${#age[*]}
+echo "The length is $length"
+if [ $size -eq $length ]
+then
+echo "Both are equal"
+else
+echo "Both are unequal"
+fi 
+sum=0
+for (( i=0; i<length; i++ ))
+do
+if [ ${age[i]} -gt 18 ]
+then
+sum=`expr $sum + ${age[i]}`
+fi
+done 
+echo "The sum is $sum"
